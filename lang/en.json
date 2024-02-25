@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome to Calories tracker",
+  "typeEmail": "Enter your email",
+  "typePassword": "Password",
+  "typePassword2": "Verify Password",
+  "btnLogin": "Login",
+  "btnSignUp": "Sign up",
+  "forgotPw": "Forgot password",
+  "anotherType": "    or Log in with    ",
+  "backSignIn": "    or Sign in with    ",
+  "quesForSignUp": "Dont have an account?",
+  "signupNow": "Sign up",
+  "signinNow": "Already have an account?",
+  "signupText": "Sign up",
+  "signinText": "Login",
+  "textSignUp": "Fill the details & create your account",
+  "userN": "Full name",
+  "forgotPWtext": "Forgot Password",
+  "forgotPWtext2": "Enter the email address associated\n with this account",
+  "forgotPWbtn": "Send"
+}

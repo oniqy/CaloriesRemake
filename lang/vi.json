@@ -1,0 +1,22 @@
+{
+  "welcome": "Chào mừng bạn đến với Calories tracker",
+  "typeEmail": "Nhập email của bạn",
+  "typePassword": "Mật khẩu",
+  "typePassword2": "Xác thực mật khẩu",
+  "btnLogin": "Đăng nhập",
+  "btnSignUp": "Đăng ký",
+  "forgotPw": "Quên mật khẩu",
+  "anotherType": "    hoặc đăng nhập với    ",
+  "backSignIn": "    hoặc đăng ký với    ",
+
+  "quesForSignUp": "Bạn chưa có tài khoản?",
+  "signupNow": "Đăng ký ngay",
+  "signupText": "Đăng ký",
+  "signinText": "Đăng nhập",
+  "textSignUp": "Nhập các thông tin bên dưới để tạo tài khoản",
+  "userN": "Họ và tên",
+  "signinNow": "Bạn đã có tài khoản?",
+  "forgotPWtext": "Quên mật khẩu",
+  "forgotPWtext2": "Nhập địa chỉ email liên kết\\n với tài khoản này",
+  "forgotPWbtn": "Gửi"
+}
