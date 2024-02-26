@@ -157,10 +157,10 @@ class _Login_pageState extends State<Login_page> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Questionnaire(questions: [
-                                          Question(questionText: 'What are your goals?', subText: 'Select all that apply'),
-                                          Question(questionText: 'How old are you?',subText: 'This help us create your personalized plan'),
-                                          Question(questionText: 'How tall are you?',subText: 'This help us create your personalized plan'),
-                                          Question(questionText: 'What is your latest weight',subText: 'You can update your weight anytime'),
+                                          Question(questionText: lang('questionText1', 'What are your goals?'), subText: lang('subText1', 'Select all that apply')),
+                                          Question(questionText: lang('questionText2', 'How old are you?'),subText: lang('subText2', 'This help us create your personalized plan')),
+                                          Question(questionText: lang('questionText3', 'How tall are you?'),subText: lang('subText3', 'This help us create your personalized plan')),
+                                          Question(questionText: lang('questionText4', 'What is your latest weight?'),subText: lang('subText4', 'You can update your weight anytime')),
                                         ])));
                               },
                               style: ElevatedButton.styleFrom(

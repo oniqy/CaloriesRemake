@@ -1,3 +1,4 @@
+import 'package:calories_remake/lang.dart';
 import 'package:flutter/material.dart';
 import 'package:calories_remake/page/Questions.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,13 @@ class _QuestionnaireState extends State<Questionnaire> {
   final TextEditingController _controller = TextEditingController();
   int currentIndex = 0;
   List<bool> itemFocusList = List<bool>.filled(4, false);
+  List<Image> assetPaths = [
+    Image.asset('assets/CaloBurn.png'),
+    Image.asset('assets/meditation2.png'),
+    Image.asset('assets/musclee.png'),
+    Image.asset('assets/balanceBody.png')
+  ];
+  List<String> textGoal = [lang("textGoal1", 'Lose Weight'),lang("textGoal2", 'Be Healthier'),lang("textGoal3", 'Build Muscle'),lang("textGoal4", 'Balance Body')];
   void nextIndex() {
     if (currentIndex < widget.questions.length - 1) {
       setState(() {
@@ -104,15 +112,29 @@ class _QuestionnaireState extends State<Questionnaire> {
                               width: 150,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: Colors.black,
-                                  width: 2
+                                    color: itemFocusList[index]?const Color(0xFF8915E4):Colors.black,
+                                  width: 3
                                 ),
-                                color: itemFocusList[index]?Colors.red:Colors.white,
+                                color: itemFocusList[index]?const Color(0xFFE9E1F3):Colors.white,
                                   borderRadius: BorderRadius.circular(20)
                               ),
                               margin: const EdgeInsets.all(10),
-                              child: Container(
-                                  child: Image.asset('assets/burnCalo.png')
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                      child: Container(
+                                        margin: EdgeInsets.only(left: 25,right: 25,top: 10,bottom: 5),
+                                          child: assetPaths[index],
+                                      ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 10),
+                                      child: Text(textGoal[index],style: TextStyle(
+                                        color: itemFocusList[index]?Color(0xFF8915E4):Colors.black,
+                                        fontWeight: FontWeight.w600
+                                      ),)
+                                  )
+                                ],
                               ),
                             ),
                           ],
@@ -141,24 +163,25 @@ class _QuestionnaireState extends State<Questionnaire> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(bottom: 20,left: 25,right: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:List.generate(widget.questions.length, (index) {
-                return Expanded(child: Container(
-                  height: 8,
-                  margin: EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      color: index==currentIndex?Color(0xFF8915E4):Colors.grey,
-                      borderRadius: BorderRadius.circular(20)
-                  ),
-                ));
-                
-              })
-
-
-            ),
+          Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 20,left: 25,right: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:List.generate(widget.questions.length, (index) {
+                    return Expanded(child: Container(
+                      height: 8,
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                          color: index==currentIndex?Color(0xFF8915E4):Colors.grey,
+                          borderRadius: BorderRadius.circular(20)
+                      ),
+                    ));
+                  })
+                ),
+              ),
+            ],
           ),
           Container(
             margin: EdgeInsets.only(bottom: 25,left: 25,right: 25),
@@ -171,8 +194,7 @@ class _QuestionnaireState extends State<Questionnaire> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)
                   )
-                ),
-                child: Text(currentIndex == widget.questions.length - 1 ? 'Apply' : 'Next',style: TextStyle(fontWeight: FontWeight.w800,fontSize: 20),)
+                ), child: Text(currentIndex == widget.questions.length - 1 ? 'Apply' : 'Next',style: TextStyle(fontWeight: FontWeight.w800,fontSize: 20),)
             ),
           ),
         ],

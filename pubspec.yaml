@@ -65,7 +65,10 @@ flutter:
     - assets/huh_cat.jpg
     - assets/light_mode.png
     - assets/dark_mode.png
-    - assets/burnCalo.png
+    - assets/CaloBurn.png
+    - assets/meditation2.png
+    - assets/musclee.png
+    - assets/balanceBody.png
     - lang/
 
   # Add other flutter configurations here, l

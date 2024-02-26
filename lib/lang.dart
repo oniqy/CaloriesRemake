@@ -20,7 +20,21 @@ Map<String,String> _vi={
   "forgotPWtext2": "Nhập địa chỉ email liên kết\n với tài khoản này",
   "switchAcc":"Đổi tài khoản",
   "profile":"Thông tin cá nhân",
-  "forgotPWbtn": "Gửi"};
+  "forgotPWbtn": "Gửi",
+  "questionText1":"Mục tiêu của bạn là gì?",
+  "questionText2":"Bạn bao nhiêu tuổi?",
+  "questionText3":"Bạn cao bao nhiêu?",
+  "questionText3":"Cân nặng gần đây nhất của bạn là bao nhiêu?",
+  "subText1": "Chọn tất cả những gì phù hợp",
+  "subText2": "Điều này giúp chúng tôi tạo kế hoạch cá nhân hóa cho bạn",
+  "subText3": "Điều này giúp chúng tôi tạo kế hoạch cá nhân hóa cho bạn",
+  "subText4": "Bạn có thể cập nhật cân nặng của mình bất cứ lúc nào",
+  "textGoal1":"Tăng cân",
+  "textGoal2":"Giảm cân",
+  "textGoal3":"Khỏe mạnh hơn",
+  "textGoal4":"Duy trì cân nặng",
+
+};
 Map<String,String> _en={
   "welcome": "Welcome to Calories tracker",
   "typeEmail": "Enter your email",
@@ -42,7 +56,21 @@ Map<String,String> _en={
   "forgotPWtext2": "Enter the email address associated\n with this account",
   "switchAcc":"Switch Account",
   "profile":"Profile",
-  "forgotPWbtn": "Send"
+  "forgotPWbtn": "Send",
+  "questionText1":"What are your goals?",
+  "questionText2":"How old are you?",
+  "questionText3":"How tall are you?",
+  "questionText3":"What is your latest weight?",
+  "subText1": "Select all that apply",
+  "subText2": "This help us create your personalized plan",
+  "subText3": "This help us create your personalized plan",
+  "subText4": "You can update your weight anytime",
+  "textGoal1":"Build Muscle",
+  "textGoal2":"Lose Weight",
+  "textGoal3":"Be Healthier",
+  "textGoal4":"Balance Body",
+
+
 };
 String currentLang = "vi";
 String lang(String key, String defaultString ){
