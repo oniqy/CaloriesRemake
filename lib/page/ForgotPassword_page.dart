@@ -1,3 +1,4 @@
+import 'package:calories_remake/lang.dart';
 import 'package:calories_remake/page/SendReuest_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +43,7 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
               child: Container(
                 margin: EdgeInsets.only(top: 75, bottom: 15),
                 child: Text(
-                  'Forgot Password',
+                  lang('forgotPWtext', 'Forgot Password'),
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           fontSize: 25,
@@ -52,7 +53,8 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
               ),
             ),
             Text(
-              'Enter the email address associated\n with this account',
+              lang('forgotPWtext2',
+                  'Enter the email address associated\n with this account'),
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
@@ -94,7 +96,7 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SendRequestPage()));
               },
-              child: Text('Send',
+              child: Text(lang('forgotPWbtn', 'Send'),
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.w500))),
@@ -114,7 +116,7 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      lang('signinNow', 'Already have an account?'),
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         fontSize: 14,
@@ -128,7 +130,7 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
                                 builder: (context) => Login_page()));
                       },
                       child: Text(
-                        ' Login',
+                        lang('signinText', ' Login'),
                         style: GoogleFonts.poppins(
                             color: Color(0xFF8915E4),
                             fontSize: 14,

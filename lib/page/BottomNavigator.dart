@@ -42,7 +42,9 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.outline, // Background color of bottom navigation bar
+              color: Theme.of(context)
+                  .colorScheme
+                  .outline, // Background color of bottom navigation bar
               borderRadius: BorderRadius.circular(25),
             ),
             child: Padding(
@@ -57,7 +59,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                 activeColor: Color(0xFF8915E4),
                 color: Theme.of(context).colorScheme.primary,
                 selectedIndex: currentPage,
-                tabs: [
+                tabs: const [
                   GButton(
                     icon: Icons.home_filled,
                     text: 'Home',

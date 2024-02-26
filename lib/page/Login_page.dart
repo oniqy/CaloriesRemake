@@ -1,3 +1,4 @@
+import 'package:calories_remake/lang.dart';
 import 'package:calories_remake/page/BottomNavigator.dart';
 import 'package:calories_remake/page/ForgotPassword_page.dart';
 import 'package:calories_remake/page/Signup_page.dart';
@@ -5,8 +6,9 @@ import 'package:calories_remake/theme/ThemeProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '/app_localizations.dart';
 
+import 'Questionnarie.dart';
+import 'Questions.dart';
 
 class Login_page extends StatefulWidget {
   Login_page({super.key});
@@ -69,7 +71,7 @@ class _Login_pageState extends State<Login_page> {
                     margin: EdgeInsets.only(top: 75),
                     height: 70,
                     child: Text(
-                      "Welcome to Calories tracker",
+                      lang('welcome', 'Welcome to Calories tracker'),
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                           textStyle: TextStyle(
@@ -88,6 +90,9 @@ class _Login_pageState extends State<Login_page> {
                     Container(
                       margin: EdgeInsets.only(left: 25, right: 25),
                       child: TextField(
+                        style:TextStyle(
+                          color: Theme.of(context).colorScheme.primary
+                        ),
                         controller: _email,
                         focusNode: _emailFocus,
                         decoration: InputDecoration(
@@ -97,7 +102,7 @@ class _Login_pageState extends State<Login_page> {
                                 ? Color(0xFF8915E4)
                                 : Colors.grey,
                           ),
-                          hintText: "Enter your email",
+                          hintText: lang('typeEmail', 'Enter your email'),
                           hintStyle: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                   color: isEmailFocused
@@ -125,7 +130,7 @@ class _Login_pageState extends State<Login_page> {
                                 ? Color(0xFF8915E4)
                                 : Colors.grey,
                           ),
-                          hintText: "Password",
+                          hintText: lang('typePassword', 'Password'),
                           hintStyle: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                   color: isPasswordFocused
@@ -151,21 +156,25 @@ class _Login_pageState extends State<Login_page> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            BottomNavigator()));
+                                        builder: (context) => Questionnaire(questions: [
+                                          Question(questionText: 'What are your goals?', subText: 'Select all that apply'),
+                                          Question(questionText: 'How old are you?',subText: 'This help us create your personalized plan'),
+                                          Question(questionText: 'How tall are you?',subText: 'This help us create your personalized plan'),
+                                          Question(questionText: 'What is your latest weight',subText: 'You can update your weight anytime'),
+                                        ])));
                               },
-                              child: Text(
-                                'Login',
-                                style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18,
-                                )),
-                              ),
                               style: ElevatedButton.styleFrom(
                                   primary: Color(0xFF8915E4),
                                   onPrimary: Colors.white,
                                   minimumSize: Size(170, 47)),
+                              child: Text(
+                                lang('btnLogin', 'Login'),
+                                style: GoogleFonts.poppins(
+                                    textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                )),
+                              ),
                             ),
                             SizedBox(width: 8),
                             Expanded(
@@ -177,7 +186,7 @@ class _Login_pageState extends State<Login_page> {
                                           builder: (context) =>
                                               ForgotPassword_page()));
                                 },
-                                child: Text('Forgot password',
+                                child: Text(lang('forgotPw', 'Forgot password'),
                                     style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
                                             fontSize: 12,
@@ -209,7 +218,7 @@ class _Login_pageState extends State<Login_page> {
                                 ? Colors.black
                                 : Theme.of(context).scaffoldBackgroundColor,
                             child: Text(
-                              '    or Log in with    ',
+                              lang('anotherType', '    or Log in with    '),
                               style: GoogleFonts.poppins(
                                   textStyle:
                                       TextStyle(color: Color(0xFF8915E4)),
@@ -236,7 +245,7 @@ class _Login_pageState extends State<Login_page> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Dont have an account?',
+                              lang('quesForSignUp', 'Dont have an account?'),
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
@@ -253,7 +262,7 @@ class _Login_pageState extends State<Login_page> {
                                         builder: (context) => SignupPage()));
                               },
                               child: Text(
-                                'Sign up',
+                                lang('signupNow', 'Sign up'),
                                 style: GoogleFonts.poppins(
                                     textStyle: TextStyle(
                                         fontSize: 14,

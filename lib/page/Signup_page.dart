@@ -1,3 +1,4 @@
+import 'package:calories_remake/lang.dart';
 import 'package:calories_remake/page/Login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -71,7 +72,7 @@ class _SignupPageState extends State<SignupPage> {
               child: Container(
                 margin: EdgeInsets.only(top: 75, bottom: 15),
                 child: Text(
-                  'Sign Up',
+                  lang('signupText', 'Sign Up'),
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
@@ -81,7 +82,7 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
             Text(
-              'Fill the details & create your account',
+              lang('textSignUp', 'Fill the details & create your account'),
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
@@ -98,7 +99,7 @@ class _SignupPageState extends State<SignupPage> {
                       Icons.account_box,
                       color: isUserNameFocus ? Color(0xFF8915E4) : Colors.grey,
                     ),
-                    hintText: 'UserName',
+                    hintText: lang('userN', 'UserName'),
                     hintStyle: GoogleFonts.poppins(
                         textStyle: TextStyle(
                             color: isUserNameFocus
@@ -139,7 +140,7 @@ class _SignupPageState extends State<SignupPage> {
                       Icons.lock,
                       color: isPassword ? Color(0xFF8915E4) : Colors.grey,
                     ),
-                    hintText: 'Password',
+                    hintText: lang('typePassword', 'Password'),
                     hintStyle: GoogleFonts.poppins(
                         textStyle: TextStyle(
                             color:
@@ -159,7 +160,7 @@ class _SignupPageState extends State<SignupPage> {
                       Icons.lock,
                       color: isPassword2 ? Color(0xFF8915E4) : Colors.grey,
                     ),
-                    hintText: 'again',
+                    hintText: lang('typePassword2', 'Verify Password'),
                     hintStyle: GoogleFonts.poppins(
                         textStyle: TextStyle(
                             color:
@@ -178,7 +179,7 @@ class _SignupPageState extends State<SignupPage> {
                     onPrimary: Colors.white,
                     minimumSize: Size(150, 47)),
                 child: Text(
-                  'Sign up',
+                  lang('signupText', 'Sign up'),
                   style: GoogleFonts.poppins(
                       textStyle:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
@@ -196,7 +197,7 @@ class _SignupPageState extends State<SignupPage> {
                   Container(
                     color: Theme.of(context).scaffoldBackgroundColor,
                     child: Text(
-                      '    or Sign in with    ',
+                      lang('backSignIn', '    or Sign in with    '),
                       style: GoogleFonts.poppins(
                           textStyle: TextStyle(color: Color(0xFF8915E4))),
                     ),
@@ -216,12 +217,11 @@ class _SignupPageState extends State<SignupPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      lang('signinNow', 'Already have an account?'),
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        color: Theme.of(context).colorScheme.primary
-                      ),
+                          fontSize: 14,
+                          color: Theme.of(context).colorScheme.primary),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -231,7 +231,7 @@ class _SignupPageState extends State<SignupPage> {
                                 builder: (context) => Login_page()));
                       },
                       child: Text(
-                        ' Login',
+                        lang('signinText', ' Login'),
                         style: GoogleFonts.poppins(
                             color: Color(0xFF8915E4),
                             fontSize: 14,
