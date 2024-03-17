@@ -1,4 +1,4 @@
-import 'package:calories_remake/lang.dart';
+import 'package:calories_remake/Language/lang.dart';
 import 'package:calories_remake/page/BottomNavigator.dart';
 import 'package:calories_remake/page/ForgotPassword_page.dart';
 import 'package:calories_remake/page/Signup_page.dart';
@@ -90,9 +90,8 @@ class _Login_pageState extends State<Login_page> {
                     Container(
                       margin: EdgeInsets.only(left: 25, right: 25),
                       child: TextField(
-                        style:TextStyle(
-                          color: Theme.of(context).colorScheme.primary
-                        ),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary),
                         controller: _email,
                         focusNode: _emailFocus,
                         decoration: InputDecoration(
@@ -156,12 +155,33 @@ class _Login_pageState extends State<Login_page> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Questionnaire(questions: [
-                                          Question(questionText: lang('questionText1', 'What are your goals?'), subText: lang('subText1', 'Select all that apply')),
-                                          Question(questionText: lang('questionText2', 'How old are you?'),subText: lang('subText2', 'This help us create your personalized plan')),
-                                          Question(questionText: lang('questionText3', 'How tall are you?'),subText: lang('subText3', 'This help us create your personalized plan')),
-                                          Question(questionText: lang('questionText4', 'What is your latest weight?'),subText: lang('subText4', 'You can update your weight anytime')),
-                                        ])));
+                                        builder: (context) =>
+                                            Questionnaire(questions: [
+                                              Question(
+                                                  questionText: lang(
+                                                      'questionText1',
+                                                      'What are your goals?'),
+                                                  subText: lang('subText1',
+                                                      'Select all that apply')),
+                                              Question(
+                                                  questionText: lang(
+                                                      'questionText2',
+                                                      'How old are you?'),
+                                                  subText: lang('subText2',
+                                                      'This help us create your personalized plan')),
+                                              Question(
+                                                  questionText: lang(
+                                                      'questionText3',
+                                                      'How tall are you?'),
+                                                  subText: lang('subText3',
+                                                      'This help us create your personalized plan')),
+                                              Question(
+                                                  questionText: lang(
+                                                      'questionText4',
+                                                      'What is your latest weight?'),
+                                                  subText: lang('subText4',
+                                                      'You can update your weight anytime')),
+                                            ])));
                               },
                               style: ElevatedButton.styleFrom(
                                   primary: Color(0xFF8915E4),

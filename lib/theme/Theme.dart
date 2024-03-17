@@ -7,11 +7,18 @@ ThemeData LightMode = ThemeData(
     colorScheme: ColorScheme.light(
         background: Colors.grey.shade100,
         primary: Colors.grey.shade900,
-        outline: Color(0xE5E3E3E3)));
+        outline: Color(0xE5E3E3E3),
+        onSecondary:Colors.grey.shade100,
+    )
+);
+
 ThemeData DarkMode = ThemeData(
     textTheme: GoogleFonts.poppinsTextTheme(),
     brightness: Brightness.dark,
     colorScheme: ColorScheme.dark(
         background: Colors.grey.shade900,
         primary: Colors.white,
-        outline: Color(0xFF363636)));
+        outline: Color(0xFF363636),
+        onSecondary:Color(0xFF363636)
+    )
+);

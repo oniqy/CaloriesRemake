@@ -1,3 +1,4 @@
+import 'package:calories_remake/page/BMI_Edit.dart';
 import 'package:calories_remake/page/Home_page.dart';
 import 'package:calories_remake/page/MenuFood.dart';
 import 'package:flutter/material.dart';
@@ -50,13 +51,13 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: GNav(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                gap: 8,
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                gap: 7,
                 curve: Curves.linear, // tab animation
                 onTabChange: NavigatorPage,
                 backgroundColor: Colors.transparent,
-                tabBackgroundColor: Color.fromRGBO(188, 124, 237, 0.2),
-                activeColor: Color(0xFF8915E4),
+                tabBackgroundColor: const Color.fromRGBO(188, 124, 237, 0.2),
+                activeColor: const Color(0xFF8915E4),
                 color: Theme.of(context).colorScheme.primary,
                 selectedIndex: currentPage,
                 tabs: const [

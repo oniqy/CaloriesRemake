@@ -93,8 +93,10 @@ class SendRequestPage extends StatelessWidget {
                   'Did not receive the email? Check your spam filter, ',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      textStyle:
-                          TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
+                      textStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Theme.of(context).colorScheme.primary)),
                 ),
                 GestureDetector(
                     onTap: () {

@@ -1,4 +1,4 @@
-import 'package:calories_remake/lang.dart';
+import 'package:calories_remake/Language/lang.dart';
 import 'package:calories_remake/page/SendReuest_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,8 +119,8 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
                       lang('signinNow', 'Already have an account?'),
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                        fontSize: 14,
-                      ),
+                          fontSize: 14,
+                          color: Theme.of(context).colorScheme.primary),
                     ),
                     GestureDetector(
                       onTap: () {
