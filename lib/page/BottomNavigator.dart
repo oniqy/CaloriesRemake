@@ -1,4 +1,4 @@
-import 'package:calories_remake/page/BMI_Edit.dart';
+import 'package:calories_remake/page/Exercise_page.dart';
 import 'package:calories_remake/page/Home_page.dart';
 import 'package:calories_remake/page/MenuFood.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +28,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   final _page = [
     HomePage(),
     MenuFood(),
+    Exercise_page(),
     ChartPage(),
     SettingPage(),
+
   ];
 
   @override
@@ -68,6 +70,10 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                   GButton(
                     icon: Icons.receipt,
                     text: 'Menu',
+                  ),
+                  GButton(
+                    icon: Icons.run_circle,
+                    text: 'Excersise',
                   ),
                   GButton(
                     icon: Icons.insert_chart,

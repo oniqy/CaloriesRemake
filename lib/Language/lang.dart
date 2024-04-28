@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 Map<String,String> _vi={
   "welcome": "Chào mừng bạn đến với Calories tracker",
   "typeEmail": "Nhập email của bạn",
@@ -47,7 +46,21 @@ Map<String,String> _vi={
   "TDEEdetail":"(Total Daily Energy Expenditure) là tất cả năng lượng cần thiết cho hoạt động mỗi ngày của bạn thương, bao gồm vận động thể chất, ăn, ngủ, nghỉ, hít thở",
   "TargetDetail":"Số lượng kcal sẽ thay đổi theo mục tiêu bạn chọn",
   "EditBMR":"Chỉnh sửa thông tin BMR",
-  "CalBMI":"Tính"
+  "CalBMI":"Tính",
+  "heading2Home":"Bữa ăn gần đây",
+  "AppBarDetailFood":"Chi tiết dinh dưỡng",
+  "FoodMenu":"Thực đơn",
+  "targetDaily":"Mục tiêu hàng ngày",
+  "exchangeCalo":"Làm thế nào để đốt cháy ",
+  "UpdateDailyMenu":"Thêm vào thực đơn trong ngày",
+  "tabViewMonth":"Tháng",
+  "tabViewYear":"Năm",
+  "chartCalo":"Biểu đồ đường calo theo tuần/tháng"
+
+
+
+
+
 
 
 
@@ -102,7 +115,16 @@ Map<String,String> _en={
   "TDEEdetail":"(Total Daily Energy Expenditure)is all the energy needed for your daily activities, including physical activity, eating, sleeping, resting, and breathing.",
   "TargetDetail":"The number of kcals will vary according to the goal you choose",
   "EditBMR":"Edit information BMR",
-  "CalBMI":"Calculator"
+  "CalBMI":"Calculator",
+  "heading2Home":"Recent Meal",
+  "AppBarDetailFood":"Nutrition Details",
+  "FoodMenu":"Food Menu",
+  "targetDaily":"Daily Target",
+  "exchangeCalo":"How to burn ",
+  "UpdateDailyMenu":"Add to menu of the day",
+  "tabViewMonth":"Month",
+  "tabViewYear":"Year",
+  "chartCalo":"Line chart of calories per week/month"
 
 
 

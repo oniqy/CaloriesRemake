@@ -32,7 +32,9 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.1.0
   cupertino_icons: ^1.0.2
+  percent_indicator: ^4.0.1
   google_nav_bar: ^5.0.6
+  fl_chart: ^0.63.0
   provider:
   flutter_localizations:
     sdk: flutter
@@ -68,6 +70,7 @@ flutter:
     - assets/CaloBurn.png
     - assets/meditation2.png
     - assets/musclee.png
+    - assets/df.png
     - assets/balanceBody.png
 
   # Add other flutter configurations here, l

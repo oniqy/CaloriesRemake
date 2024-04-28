@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../Language/lang.dart';
 class BMI_Edit extends StatefulWidget {
@@ -27,14 +26,59 @@ class _BMI_EditState extends State<BMI_Edit> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
-        title: Text(lang("subHeading1","BMI")),
+        flexibleSpace:
+        Container(
+          height: 60,
+          width: double.infinity,
+          margin: EdgeInsets.only(left: 25,right: 25,top:40),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8),topLeft: Radius.circular(25),bottomRight: Radius.circular(25),topRight: Radius.circular(8)),
+              boxShadow: const[
+                BoxShadow(
+                    color: Colors.black38,
+                    offset: Offset(
+                        0.5,0.5                    ),
+                    blurRadius: 2.0,
+                    spreadRadius: 0.3
+                )
+              ],
+              color: Theme.of(context).colorScheme.onSecondary
+          ),
+          child: Container(
+            margin: EdgeInsets.only(left: 20,right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    height: 30,
+                    width: 30,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color:  Color(0xFFE5CAFF),
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5),topLeft: Radius.circular(15),bottomRight: Radius.circular(15),topRight: Radius.circular(5)),
+                        ),
+                        child: Icon(Icons.arrow_back,color: Color(0xFF5C0187),),
+                      ),
+                    )
+                ),
+                Text(lang("subHeading1","BMI"),style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 18,fontWeight: FontWeight.w400),),
+
+              ],
+            ),
+          ),
+        ),
+        leading: Container(width: 0.0),
       ),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(left: 20,right: 20,top: 20),
+            margin: EdgeInsets.only(left: 25,right: 25,top: 20),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(40),
                   bottomLeft: Radius.circular(40),topLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
@@ -43,7 +87,7 @@ class _BMI_EditState extends State<BMI_Edit> {
               boxShadow:const[ BoxShadow(
                 color: Colors.black38,
                 offset: Offset(
-                  2.0,2.0
+                    0.5,0.5
                 ),
                 blurRadius: 2.0,
                 spreadRadius: 0.7
@@ -109,8 +153,6 @@ class _BMI_EditState extends State<BMI_Edit> {
                       child: Text(lang('CalBMI', "cal"),style: TextStyle(fontSize: 20),),
                     ),
                   ),
-
-
                 ],
               ),
             ),
@@ -125,11 +167,8 @@ class _BMI_EditState extends State<BMI_Edit> {
                   Text('$bmi',style: TextStyle(color: Color(0xFF8915E4),fontSize: 23,fontWeight: FontWeight.w600),)
                 ],
               )),
-
-
         ],
       ),
-
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:calories_remake/page/Login_page.dart';
 import 'package:calories_remake/theme/ThemeProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(

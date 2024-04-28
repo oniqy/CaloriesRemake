@@ -52,7 +52,6 @@ class _QuestionnaireState extends State<Questionnaire> {
 
   @override
   Widget build(BuildContext context) {
-    var currentQuestion = widget.questions[currentIndex];
     return Scaffold(
       body: Column(
         children: [

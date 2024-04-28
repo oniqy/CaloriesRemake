@@ -38,17 +38,19 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                margin: EdgeInsets.only(top: 75, bottom: 15),
-                child: Text(
-                  lang('forgotPWtext', 'Forgot Password'),
-                  style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary)),
+            SafeArea(
+              child: Align(
+                alignment: Alignment.center,
+                child: Container(
+                  margin: EdgeInsets.only(top: 75, bottom: 15),
+                  child: Text(
+                    lang('forgotPWtext', 'Forgot Password'),
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).colorScheme.primary)),
+                  ),
                 ),
               ),
             ),

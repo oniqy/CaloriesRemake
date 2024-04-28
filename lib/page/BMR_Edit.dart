@@ -16,8 +16,53 @@ class _BMR_EditState extends State<BMR_Edit> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
-        title: Text(lang('subHeading2', "BMR"),
+        flexibleSpace:
+        Container(
+          height: 60,
+          width: double.infinity,
+          margin: EdgeInsets.only(left: 25,right: 25,top:40),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8),topLeft: Radius.circular(25),bottomRight: Radius.circular(25),topRight: Radius.circular(8)),
+              boxShadow: const[
+                BoxShadow(
+                    color: Colors.black38,
+                    offset: Offset(
+                        0.5,0.5
+                    ),
+                    blurRadius: 2.0,
+                    spreadRadius: 0.3
+                )
+              ],
+              color: Theme.of(context).colorScheme.onSecondary
+          ),
+          child: Container(
+            margin: EdgeInsets.only(left: 20,right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    height: 30,
+                    width: 30,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color:  Color(0xFFE5CAFF),
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5),topLeft: Radius.circular(15),bottomRight: Radius.circular(15),topRight: Radius.circular(5)),
+                        ),
+                        child: Icon(Icons.arrow_back,color: Color(0xFF5C0187),),
+                      ),
+                    )
+                ),
+                Text(lang("subHeading2","BMR"),style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 18,fontWeight: FontWeight.w400),),
+
+              ],
+            ),
+          ),
         ),
+        leading: Container(width: 0.0),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,8 +86,7 @@ class _BMR_EditState extends State<BMR_Edit> {
                 boxShadow: const [BoxShadow(
                   color: Colors.black38,
                   offset: Offset(
-                    2.0,
-                    2.0
+                      0.5,0.5
                   ),
                   blurRadius: 2.0,
                   spreadRadius: 0.7,
@@ -108,8 +152,8 @@ class _BMR_EditState extends State<BMR_Edit> {
                   boxShadow: const [BoxShadow(
                     color: Colors.black38,
                     offset: Offset(
-                        2.0,
-                        2.0
+
+                        0.5,0.5
                     ),
                     blurRadius: 2.0,
                     spreadRadius: 0.7,
@@ -175,8 +219,7 @@ class _BMR_EditState extends State<BMR_Edit> {
                   boxShadow: const [BoxShadow(
                     color: Colors.black38,
                     offset: Offset(
-                        2.0,
-                        2.0
+                        0.5,0.5
                     ),
                     blurRadius: 2.0,
                     spreadRadius: 0.7,
