@@ -219,8 +219,7 @@ class _QuestionnaireState extends State<Questionnaire> {
             child: ElevatedButton(
                 onPressed: nextIndex,
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF8915E4),
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4),
                     minimumSize: Size(double.infinity, 45),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12))),

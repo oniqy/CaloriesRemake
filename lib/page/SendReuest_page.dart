@@ -71,8 +71,7 @@ class SendRequestPage extends StatelessWidget {
                       textStyle:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w600))),
               style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF8915E4),
-                  onPrimary: Colors.white,
+                  foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4),
                   minimumSize: Size(190, 47)),
             ),
             Container(

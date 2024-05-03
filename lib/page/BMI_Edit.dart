@@ -146,8 +146,7 @@ class _BMI_EditState extends State<BMI_Edit> {
                         tinhBMI(int.parse(_inputWeight.value.text) ,int.parse(_inputHieght.value.text));
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF8915E4),
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4),
                         minimumSize: Size(double.infinity, 45),
                       ),
                       child: Text(lang('CalBMI', "cal"),style: TextStyle(fontSize: 20),),

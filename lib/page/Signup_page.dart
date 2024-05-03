@@ -175,8 +175,7 @@ class _SignupPageState extends State<SignupPage> {
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF8915E4),
-                    onPrimary: Colors.white,
+                    foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4),
                     minimumSize: Size(150, 47)),
                 child: Text(
                   lang('signupText', 'Sign up'),

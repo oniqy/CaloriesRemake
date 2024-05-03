@@ -196,9 +196,8 @@ class _Login_pageState extends State<Login_page> {
                                               ])));
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    primary: Color(0xFF8915E4),
+                                    foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4),
                                     disabledBackgroundColor: Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
-                                    onPrimary: Colors.white,
                                     animationDuration: Duration(seconds: 1),
                                     minimumSize: Size(170, 47)),
                                 child: Text(
@@ -226,9 +225,7 @@ class _Login_pageState extends State<Login_page> {
                                               fontSize: 12,
                                               fontWeight: FontWeight.w500))),
                                   style: ElevatedButton.styleFrom(
-                                    primary:
-                                        Theme.of(context).scaffoldBackgroundColor,
-                                    onPrimary: Color(0xFF8915E4),
+                                    foregroundColor: Color(0xFF8915E4), backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                                     elevation: 0,
                                   ),
                                 ),

@@ -103,9 +103,7 @@ class _ForgotPassword_pageState extends State<ForgotPassword_page> {
                       textStyle: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.w500))),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(170, 47),
-                primary: Color(0xFF8915E4),
-                onPrimary: Colors.white,
+                foregroundColor: Colors.white, backgroundColor: Color(0xFF8915E4), minimumSize: Size(170, 47),
               ),
             ),
             SizedBox(

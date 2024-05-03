@@ -245,7 +245,38 @@ class _ChartPageState extends State<ChartPage>with TickerProviderStateMixin {
               child: TabBarView(
               controller: tabController,
               children: [
-                Tab(child: Text("Thang"),),
+                Tab(child: Stack(
+                  children: <Widget>[
+                    AspectRatio(
+                      aspectRatio: 1.30,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          right: 18,
+                          left: 12,
+                          top: 24,
+                          bottom: 12,
+                        ),
+                        child: LineChart(
+                          CaloInDataMonth(),
+                        ),
+                      ),
+                    ),
+                    AspectRatio(
+                      aspectRatio: 1.30,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          right: 18,
+                          left: 12,
+                          top: 24,
+                          bottom: 12,
+                        ),
+                        child: LineChart(
+                          CaloOutDataMonth(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),),
                 Tab(
                   child: Stack(
                     children: <Widget>[
@@ -299,40 +330,40 @@ Widget bottomTitleWidgetsYear(double value, TitleMeta meta) {
   );
   Widget text;
   switch (value.toInt()) {
-    case 2:
+    case 1:
       text = const Text('Jan', style: style);
       break;
-    case 4:
+    case 2:
       text = const Text('Feb', style: style);
       break;
-    case 6:
+    case 3:
       text = const Text('Mar', style: style);
       break;
-    case 8:
+    case 4:
       text = const Text('Apr', style: style);
       break;
-    case 10:
+    case 5:
       text = const Text('May', style: style);
       break;
-    case 12:
+    case 6:
       text = const Text('Jun', style:style);
       break;
-    case 14:
+    case 7:
       text = const Text('Jul', style: style);
       break;
-    case 16:
+    case 8:
       text = const Text('Aug', style:style);
       break;
-    case 18:
+    case 9:
       text = const Text('Sep', style: style);
       break;
-    case 20:
+    case 10:
       text = const Text('Oct', style:style);
       break;
-    case 22:
+    case 11:
       text = const Text('Nov', style: style);
       break;
-    case 24:
+    case 12:
       text = const Text('Dec', style: style);
       break;
     default:
@@ -353,41 +384,17 @@ Widget bottomTitleWidgetsMonth(double value, TitleMeta meta) {
   );
   Widget text;
   switch (value.toInt()) {
-    case 2:
-      text = const Text('Jan', style: style);
+    case 0:
+      text = const Text('W1', style: style);
       break;
     case 4:
-      text = const Text('Feb', style: style);
-      break;
-    case 6:
-      text = const Text('Mar', style: style);
+      text = const Text('W2', style: style);
       break;
     case 8:
-      text = const Text('Apr', style: style);
-      break;
-    case 10:
-      text = const Text('May', style: style);
+      text = const Text('W3', style: style);
       break;
     case 12:
-      text = const Text('Jun', style:style);
-      break;
-    case 14:
-      text = const Text('Jul', style: style);
-      break;
-    case 16:
-      text = const Text('Aug', style:style);
-      break;
-    case 18:
-      text = const Text('Sep', style: style);
-      break;
-    case 20:
-      text = const Text('Oct', style:style);
-      break;
-    case 22:
-      text = const Text('Nov', style: style);
-      break;
-    case 24:
-      text = const Text('Dec', style: style);
+      text = const Text('W4', style: style);
       break;
     default:
       text = const Text('', style: style);
@@ -490,18 +497,18 @@ LineChartData CaloInDataYear() {
     lineBarsData: [
       LineChartBarData(
         spots: const [
-          FlSpot(2, 3),
-          FlSpot(4, 2),
-          FlSpot(6, 5),
-          FlSpot(8, 3.1),
+          FlSpot(1, 2),
+          FlSpot(2, 5),
+          FlSpot(3, 3.1),
+          FlSpot(4, 4),
+          FlSpot(5, 3),
+          FlSpot(6, 3),
+          FlSpot(7, 2),
+          FlSpot(8, 5),
+          FlSpot(9, 3.1),
           FlSpot(10, 4),
+          FlSpot(11, 3),
           FlSpot(12, 3),
-          FlSpot(14, 3),
-          FlSpot(16, 2),
-          FlSpot(18, 5),
-          FlSpot(20, 3.1),
-          FlSpot(22, 4),
-          FlSpot(24, 3),
 
 
         ],
@@ -589,18 +596,202 @@ LineChartData CaloOutDataYear() {
     lineBarsData: [
       LineChartBarData(
         spots: const [
-          FlSpot(2, 2),
-          FlSpot(4, 1),
-          FlSpot(6, 3),
-          FlSpot(8, 1),
+          FlSpot(1, 1),
+          FlSpot(2, 3),
+          FlSpot(3, 1),
+          FlSpot(4, 2),
+          FlSpot(5, 6),
+          FlSpot(6, 5),
+          FlSpot(7, 4),
+          FlSpot(8, 3),
+          FlSpot(9, 1.1),
           FlSpot(10, 2),
-          FlSpot(12, 6),
-          FlSpot(14, 5),
-          FlSpot(16, 4),
-          FlSpot(18, 3),
-          FlSpot(20, 1.1),
-          FlSpot(22, 2),
-          FlSpot(24, 9),
+          FlSpot(11, 9),
+          FlSpot(12, 9),
+
+
+        ],
+        isCurved: true,
+        gradient: LinearGradient(
+          colors: gradientColors,
+        ),
+        barWidth: 5,
+        isStrokeCapRound: true,
+        dotData: FlDotData(
+          show: true,
+          getDotPainter:  (FlSpot spot, double percent, LineChartBarData barData, int index){
+            return ValueDotPainter();
+
+          },
+        ),
+        belowBarData: BarAreaData(
+          show: true,
+          gradient: LinearGradient(
+            colors: gradientColors.map((color) => color.withOpacity(0.3))
+                .toList(),
+          ),
+        ),
+      ),
+    ],
+  );
+}
+LineChartData CaloInDataMonth() {
+  List<Color> gradientColors = [
+    Color(0xFF6CEA90),
+    Color(0xFF6CEA90),
+  ];
+  return LineChartData(
+    gridData: FlGridData(
+      show: true,
+      drawVerticalLine: true,
+      horizontalInterval: 1,
+      verticalInterval: 1,
+      getDrawingHorizontalLine: (value) {
+        return const FlLine(
+          color: Color(0xFF8915E4),
+          strokeWidth: 1,
+        );
+      },
+      getDrawingVerticalLine: (value) {
+        return const FlLine(
+          color: Color(0xFF8915E4),
+          strokeWidth: 1,
+        );
+      },
+    ),
+    titlesData: const FlTitlesData(
+      show: true,
+      rightTitles: AxisTitles(
+        sideTitles: SideTitles(showTitles: false),
+      ),
+      topTitles: AxisTitles(
+        sideTitles: SideTitles(showTitles: false),
+      ),
+      bottomTitles: AxisTitles(
+        sideTitles: SideTitles(
+          showTitles: true,
+          reservedSize: 30,
+          interval: 1,
+          getTitlesWidget: bottomTitleWidgetsMonth,
+        ),
+      ),
+      leftTitles: AxisTitles(
+        sideTitles: SideTitles(
+          showTitles: true,
+          interval: 1,
+          getTitlesWidget: leftTitleWidgets,
+          reservedSize: 52,
+        ),
+      ),
+    ),
+    borderData: FlBorderData(
+      show: true,
+      border: Border.all(color: const Color(0xff37434d)),
+    ),
+    minX: 0,
+    maxX: 12,
+    minY: 0,
+    maxY: 12,
+    lineBarsData: [
+      LineChartBarData(
+        spots: const [
+          FlSpot(0, 3),
+          FlSpot(4, 2),
+          FlSpot(8, 5),
+          FlSpot(12, 3.1),
+
+
+
+        ],
+        isCurved: true,
+        gradient: LinearGradient(
+          colors: gradientColors,
+        ),
+        barWidth: 5,
+        isStrokeCapRound: true,
+        dotData:  FlDotData(
+          show: true,
+          getDotPainter:  (FlSpot spot, double percent, LineChartBarData barData, int index){
+            return ValueDotPainter();
+
+          },
+        ),
+        belowBarData: BarAreaData(
+          show: true,
+          gradient: LinearGradient(
+            colors: gradientColors.map((color) => color.withOpacity(0.3))
+                .toList(),
+          ),
+        ),
+      ),
+    ],
+  );
+}
+LineChartData CaloOutDataMonth() {
+  List<Color> gradientColors = [
+    Colors.red,
+    Colors.red,
+  ];
+  return LineChartData(
+    gridData: FlGridData(
+      show: true,
+      drawVerticalLine: true,
+      horizontalInterval: 1,
+      verticalInterval: 1,
+      getDrawingHorizontalLine: (value) {
+        return const FlLine(
+          color: Color(0xFF8915E4),
+          strokeWidth: 1,
+        );
+      },
+      getDrawingVerticalLine: (value) {
+        return const FlLine(
+          color: Color(0xFF8915E4),
+          strokeWidth: 1,
+        );
+      },
+    ),
+    titlesData: const FlTitlesData(
+      show: true,
+      rightTitles: AxisTitles(
+        sideTitles: SideTitles(showTitles: false),
+      ),
+      topTitles: AxisTitles(
+        sideTitles: SideTitles(showTitles: false),
+      ),
+      bottomTitles: AxisTitles(
+        sideTitles: SideTitles(
+          showTitles: true,
+          reservedSize: 30,
+          interval: 1,
+          getTitlesWidget: bottomTitleWidgetsMonth,
+        ),
+      ),
+      leftTitles: AxisTitles(
+        sideTitles: SideTitles(
+          showTitles: true,
+          interval: 1,
+          getTitlesWidget: leftTitleWidgets,
+          reservedSize: 52,
+        ),
+      ),
+    ),
+    borderData: FlBorderData(
+      show: true,
+      border: Border.all(color: const Color(0xff37434d)),
+    ),
+    minX: 0,
+    maxX: 12,
+    minY: 0,
+    maxY: 12,
+    lineBarsData: [
+      LineChartBarData(
+        spots: const [
+          FlSpot(0, 2),
+          FlSpot(4, 1),
+          FlSpot(8, 3),
+          FlSpot(12, 1),
+
         ],
         isCurved: true,
         gradient: LinearGradient(
