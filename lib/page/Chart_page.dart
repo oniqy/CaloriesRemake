@@ -509,8 +509,6 @@ LineChartData CaloInDataYear() {
           FlSpot(10, 4),
           FlSpot(11, 3),
           FlSpot(12, 3),
-
-
         ],
         isCurved: true,
         gradient: LinearGradient(
