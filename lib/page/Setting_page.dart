@@ -4,6 +4,7 @@ import 'package:calories_remake/theme/ThemeProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingPage extends StatefulWidget {
   SettingPage({super.key});
@@ -14,6 +15,19 @@ class SettingPage extends StatefulWidget {
 
 class _SettingPageState extends State<SettingPage> {
   bool isSwitch = false;
+  String? email;
+  @override
+  void initState() {
+    super.initState();
+    getemail();
+  }
+  void getemail() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      email = prefs.getString('UserEmail');
+    });
+  }
+
   void _ToggleTheme(bool value) {
     setState(() {
       Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
@@ -30,39 +44,40 @@ class _SettingPageState extends State<SettingPage> {
             children: [
               Container(
                 alignment: Alignment.topCenter,
+                margin: const EdgeInsets.only(top: 40),
                 child: Text(
                   lang('profile', 'Profile'),
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           fontSize: 20,
+                          fontWeight: FontWeight.bold,
                           color: Theme.of(context).colorScheme.primary)),
                 ),
-                margin: EdgeInsets.only(top: 40),
               ),
               Container(
                 height: 160,
                 width: 160,
-                margin: EdgeInsets.only(top: 22),
+                margin: const EdgeInsets.only(top: 22),
                 child: ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
                   child: Image.asset(
                     'assets/huh_cat.jpg',
                     fit: BoxFit.fill,
                   ),
-                  borderRadius: BorderRadius.circular(100),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Text(
-                'data',
+                '$email',
                 style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.primary)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ElevatedButton(
@@ -80,12 +95,12 @@ class _SettingPageState extends State<SettingPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(lang('switchAcc', 'Switch Account'),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Color(0xFFD479FF), fontSize: 15)),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.switch_account,
                           color: Color(0xFFD479FF),
                         )
@@ -93,17 +108,17 @@ class _SettingPageState extends State<SettingPage> {
                     ),
                   )),
               Container(
-                margin: EdgeInsets.only(right: 25, left: 25, top: 20),
+                margin: const EdgeInsets.only(right: 25, left: 25, top: 20),
                 child: Divider(
                   height: 0.2,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                margin: EdgeInsets.only(left: 25, right: 20),
+                margin: const EdgeInsets.only(left: 25, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -117,7 +132,7 @@ class _SettingPageState extends State<SettingPage> {
                     Transform.scale(
                         scale: 0.9,
                         child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               left: 4, right: 1, top: 1, bottom: 1),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
@@ -135,8 +150,9 @@ class _SettingPageState extends State<SettingPage> {
                                 child: Text(
                                   "Việt Nam",
                                   style: TextStyle(
-                                      color:
-                                          Theme.of(context).colorScheme.primary),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
                                 ),
                               ),
                               DropdownMenuItem(
@@ -144,8 +160,9 @@ class _SettingPageState extends State<SettingPage> {
                                 child: Text(
                                   "English",
                                   style: TextStyle(
-                                      color:
-                                          Theme.of(context).colorScheme.primary),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
                                 ),
                               )
                             ],
@@ -159,11 +176,11 @@ class _SettingPageState extends State<SettingPage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                margin: EdgeInsets.only(left: 25, right: 25),
+                margin: const EdgeInsets.only(left: 25, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -181,8 +198,8 @@ class _SettingPageState extends State<SettingPage> {
                         onChanged: _ToggleTheme,
                         activeColor:
                             Colors.grey.shade100, // Bright color for visibility
-                        inactiveThumbColor:
-                            Colors.grey.shade100, // Contrast color for visibility
+                        inactiveThumbColor: Colors
+                            .grey.shade100, // Contrast color for visibility
                         activeTrackColor: Colors.grey
                             .shade700, // Light color for visibility of dark thumb image
                         inactiveTrackColor: Colors.grey.shade700,
@@ -195,21 +212,21 @@ class _SettingPageState extends State<SettingPage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                margin: EdgeInsets.only(right: 25, left: 25),
+                margin: const EdgeInsets.only(right: 25, left: 25),
                 child: Divider(
                   height: 0.2,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                margin: EdgeInsets.only(left: 25, right: 25),
+                margin: const EdgeInsets.only(left: 25, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -219,17 +236,17 @@ class _SettingPageState extends State<SettingPage> {
                           fontSize: 18,
                           color: Theme.of(context).colorScheme.primary),
                     ),
-                    Icon(Icons.comment)
+                    const Icon(Icons.comment)
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               GestureDetector(
                 onTap: () {},
                 child: Container(
-                  margin: EdgeInsets.only(left: 25, right: 25),
+                  margin: const EdgeInsets.only(left: 25, right: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -239,16 +256,16 @@ class _SettingPageState extends State<SettingPage> {
                             fontSize: 18,
                             color: Theme.of(context).colorScheme.primary),
                       ),
-                      Transform.scale(scale: 1.3, child: Icon(Icons.info))
+                      Transform.scale(scale: 1.3, child: const Icon(Icons.info))
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                margin: EdgeInsets.only(left: 25, right: 25),
+                margin: const EdgeInsets.only(left: 25, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -268,7 +285,7 @@ class _SettingPageState extends State<SettingPage> {
                                 MaterialPageRoute(
                                     builder: (context) => Login_page()));
                           },
-                          child: Icon(Icons.login_sharp)),
+                          child: const Icon(Icons.login_sharp)),
                     ),
                   ],
                 ),
