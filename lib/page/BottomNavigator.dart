@@ -28,10 +28,9 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   final _page = [
     HomePage(),
     MenuFood(),
-    Exercise_page(),
+    const Exercise_page(),
     ChartPage(),
     SettingPage(),
-
   ];
 
   @override
@@ -40,22 +39,36 @@ class _BottomNavigatorState extends State<BottomNavigator> {
       theme: Provider.of<ThemeProvider>(context).themeData,
       darkTheme: Provider.of<ThemeProvider>(context).themeData,
       home: Scaffold(
-        body: _page[currentPage],
+        body: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 1500),
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1, 0),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              ),
+            );
+          },
+          child: _page[currentPage],
+        ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context)
-                  .colorScheme
-                  .outline, // Background color of bottom navigation bar
+              color: Theme.of(context).colorScheme.outline,
               borderRadius: BorderRadius.circular(25),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: GNav(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 gap: 7,
-                curve: Curves.linear, // tab animation
+                curve: Curves.easeInToLinear,
                 onTabChange: NavigatorPage,
                 backgroundColor: Colors.transparent,
                 tabBackgroundColor: const Color.fromRGBO(188, 124, 237, 0.2),
@@ -73,7 +86,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
                   ),
                   GButton(
                     icon: Icons.run_circle,
-                    text: 'Excersise',
+                    text: 'Exercise',
                   ),
                   GButton(
                     icon: Icons.insert_chart,
