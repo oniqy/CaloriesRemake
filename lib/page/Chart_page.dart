@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/domain/entities/calories_in.dart';
 import 'package:calories_remake/domain/entities/nutrition_foor.dart';
 import 'package:calories_remake/domain/entities/user_info.dart';
@@ -35,10 +35,8 @@ class _ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     getInfoUser();
-    Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      getDataForChart();
-    });
+    getDataForChart();
+    _refreshData();
   }
 
   Future<void> _refreshData() async {
@@ -510,10 +508,7 @@ Widget bottomTitleWidgetsWeek(double value, TitleMeta meta) {
 
 Widget leftTitleWidgets(double value, TitleMeta meta) {
   const style = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 15,
-    color: Color(0xFFD479FF)
-  );
+      fontWeight: FontWeight.bold, fontSize: 15, color: Color(0xFFD479FF));
 
   String text = '';
   if (value % 500 == 0) {

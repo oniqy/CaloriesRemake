@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../Language/lang.dart';
+import '../language/lang.dart';
 import '../Witget/Indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -71,6 +71,16 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
             (widget.nutritionFoodEntity.carbs / carbs!).toStringAsFixed(2));
         fat = double.parse(
             (widget.nutritionFoodEntity.fats / fats!).toStringAsFixed(2));
+      } else {
+        proteins = double.parse((TDEE! * 0.4 / 4).toStringAsFixed(1));
+        carbs = double.parse((TDEE * 0.3 / 4).toStringAsFixed(1));
+        fats = double.parse((TDEE * 0.3 / 9).toStringAsFixed(1));
+        protein = double.parse((widget.nutritionFoodEntity.proteins / proteins!)
+            .toStringAsFixed(2));
+        carb = double.parse(
+            (widget.nutritionFoodEntity.carbs / carbs!).toStringAsFixed(2));
+        fat = double.parse(
+            (widget.nutritionFoodEntity.fats / fats!).toStringAsFixed(2));
       }
     });
   }
@@ -92,8 +102,8 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
           content: Container(
             padding: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary, // Màu nền
-              borderRadius: BorderRadius.circular(10), // Bo góc
+              color: Theme.of(context).colorScheme.primary, 
+              borderRadius: BorderRadius.circular(10), 
             ),
             child: Text(
               "Bạn đã thêm ${widget.nutritionFoodEntity.foodName} vào ngày $formattedDate",
@@ -315,7 +325,7 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
                                   animation: true,
                                   animationDuration: 1500,
                                   lineHeight: 18,
-                                  percent: carb!,
+                                  percent: (carb) ?? 1,
                                   progressColor: const Color(0xFFFB7E93),
                                   backgroundColor: const Color(0xFFE7E7E7),
                                   barRadius: const Radius.circular(10),
@@ -352,7 +362,7 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
                                   animation: true,
                                   animationDuration: 1500,
                                   lineHeight: 18,
-                                  percent: fat!,
+                                  percent: (fat) ?? 1,
                                   progressColor: const Color(0xFF6CEA90),
                                   backgroundColor: const Color(0xFFE7E7E7),
                                   barRadius: const Radius.circular(10),
@@ -390,7 +400,7 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
                                   animation: true,
                                   animationDuration: 1500,
                                   lineHeight: 18,
-                                  percent: protein!,
+                                  percent: (protein) ?? 1,
                                   progressColor: const Color(0xFFF3B838),
                                   backgroundColor: const Color(0xFFE7E7E7),
                                   barRadius: const Radius.circular(10),
@@ -514,7 +524,7 @@ class _NutritionDetail_pageState extends State<NutritionDetail_page> {
               right: 25,
               bottom: 15,
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   createDailyCalo();
                 },
                 child: Container(

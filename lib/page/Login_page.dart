@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/domain/usecases/get_userInfo_byId.dart';
 import 'package:calories_remake/domain/usecases/usecase_login.dart';
 import 'package:calories_remake/page/BottomNavigator.dart';
 import 'package:calories_remake/page/ForgotPassword_page.dart';
-import 'package:calories_remake/page/Home_page.dart';
 import 'package:calories_remake/page/Signup_page.dart';
 import 'package:calories_remake/theme/ThemeProvider.dart';
 import 'package:flutter/material.dart';
@@ -132,9 +131,7 @@ class _Login_pageState extends State<Login_page>
       } else {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  BottomNavigator()), 
+          MaterialPageRoute(builder: (context) => BottomNavigator()),
         );
       }
     } else if (isLogin == 401) {
@@ -193,11 +190,11 @@ class _Login_pageState extends State<Login_page>
             title: Row(
               children: [
                 icon,
-                const SizedBox(width: 10),
+                const SizedBox(width: 8),
                 Text(
                   header,
                   style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                      fontSize: 15, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -237,6 +234,7 @@ class _Login_pageState extends State<Login_page>
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
           body: SafeArea(
@@ -366,7 +364,8 @@ class _Login_pageState extends State<Login_page>
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: const Color(0xFF8915E4),
                                     backgroundColor: Theme.of(context)
-                                        .scaffoldBackgroundColor,
+                                        .colorScheme
+                                        .background,
                                     elevation: 0,
                                   ),
                                   child: Text(
@@ -394,7 +393,7 @@ class _Login_pageState extends State<Login_page>
                             Container(
                               color: currentTheme
                                   ? Colors.black
-                                  : Theme.of(context).scaffoldBackgroundColor,
+                                  : Theme.of(context).colorScheme.background,
                               child: Text(
                                 lang('anotherType', '    or Log in with    '),
                                 style: GoogleFonts.poppins(

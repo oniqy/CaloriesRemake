@@ -46,7 +46,7 @@ Map<String, String> _vi = {
   "BMRdetail":
       "(Basal Metabolic Rate) tỷ lệ trao đổi chất cơ bản trong cơ thể con người,cho biết mức năng lượng tối thiểu mà cơ thể cần",
   "TDEEdetail":
-      "(Total Daily Energy Expenditure) là tất cả năng lượng cần thiết cho hoạt động mỗi ngày của bạn thương, bao gồm vận động thể chất, ăn, ngủ, nghỉ, hít thở",
+      "Là tất cả năng lượng cần thiết cho hoạt động mỗi ngày của bạn thương, bao gồm vận động thể chất, ăn, ngủ, nghỉ, hít thở",
   "TargetDetail": "Số lượng kcal sẽ thay đổi theo mục tiêu bạn chọn",
   "EditBMR": "Chỉnh sửa thông tin BMR",
   "CalBMI": "Tính",
@@ -62,9 +62,15 @@ Map<String, String> _vi = {
   "headingHome": "Tổng Calories",
   "editHeading1":"Chỉnh sửa thông tin BMR",
   "bmiCount":"Chỉ số BMI của bạn là :",
-  "dele":"Xoá"
+  "dele":"Xoá",
+  "Search food...":"Tìm kiếm món ăn ....",
+  "searchBut":"Tìm",
+    "headerNewFood":'Thêm món ăn',
+    "warning":"Hãy kiểm soát chế độ ăn của bạn"
 };
 Map<String, String> _en = {
+      "warning":"Take control of your diet",
+
   "welcome": "Welcome to Calories tracker",
   "typeEmail": "Enter your email",
   "typePassword": "Password",
@@ -129,7 +135,10 @@ Map<String, String> _en = {
   "headingHome": "Calculate Calories",
   "editHeading1":"Edit BMR",
   "bmiCount":"Your BMI is:",
-  "dele":"Delete"
+  "dele":"Delete",
+  "Search food...":"Search food...",
+  "searchBut":"Search",
+  "headerNewFood":'Add Food Nutrition'
 };
 String currentLang = "vi";
 String lang(String key, String defaultString) {

@@ -14,7 +14,7 @@ import 'dart:math' as math;
 
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../Language/lang.dart';
+import '../language/lang.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
     getemail();
     getInfoUser();
     takeREalDate();
+     _refreshData();
     
   }
 
@@ -229,7 +230,7 @@ class _HomePageState extends State<HomePage> {
         duration: const Duration(seconds: 2),
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
-        elevation: 0, // Tắt hiệu ứng nổi
+        elevation: 0, 
         backgroundColor: Colors.transparent,
       ),
     );

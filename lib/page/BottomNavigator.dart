@@ -26,8 +26,8 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   }
 
   final _page = [
-    HomePage(),
-    MenuFood(),
+    const HomePage(),
+    const MenuFood(),
     const Exercise_page(),
     ChartPage(),
     SettingPage(),
@@ -36,11 +36,12 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).themeData,
       darkTheme: Provider.of<ThemeProvider>(context).themeData,
       home: Scaffold(
         body: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 1500),
+          duration: const Duration(milliseconds: 1000),
           transitionBuilder: (Widget child, Animation<double> animation) {
             return FadeTransition(
               opacity: animation,
