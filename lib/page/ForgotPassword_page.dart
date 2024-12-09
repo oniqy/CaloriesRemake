@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/page/SendReuest_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

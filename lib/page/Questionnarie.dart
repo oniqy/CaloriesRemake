@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/domain/entities/user_info.dart';
 import 'package:calories_remake/domain/usecases/create_user_information.dart';
 import 'package:calories_remake/page/Questions.dart';
@@ -58,11 +58,9 @@ class _QuestionnaireState extends State<Questionnaire> {
     if (currentIndex < widget.questions.length - 1) {
       setState(() {
         currentIndex++;
-        _controller.clear(); 
+        _controller.clear();
       });
     } else {
-      print("Debug - itemFocusList: $itemFocusList");
-
       if (itemFocusList.contains(true)) {
         int? userAccountId = await getUserAccountId();
         userInfo.userAccountId = userAccountId!;
@@ -78,14 +76,12 @@ class _QuestionnaireState extends State<Questionnaire> {
           userInfo.age,
         );
         if (statusCode == 200) {
-          
+          setState(() {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BottomNavigator()));
+          });
         }
       }
-
-      setState(() {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => BottomNavigator()));
-      });
     }
   }
 
@@ -96,7 +92,7 @@ class _QuestionnaireState extends State<Questionnaire> {
   }
 
   UserInfoEntity userInfo = UserInfoEntity(
-    userAccountId: 0, 
+    userAccountId: 0,
     userHeight: 0.0,
     userWeight: 0.0,
     exerciseIntensity: '',

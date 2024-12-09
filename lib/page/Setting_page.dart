@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/page/Login_page.dart';
 import 'package:calories_remake/theme/ThemeProvider.dart';
 import 'package:flutter/material.dart';

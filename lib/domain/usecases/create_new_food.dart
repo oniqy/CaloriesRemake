@@ -1,13 +1,16 @@
 import 'dart:convert';
 import 'package:calories_remake/data/api_service.dart';
 
-Future<int?> createAccount(
-    String userName, String password, String userEmail) async {
-  const endpoint = "createUserAccount";
+Future<int> createNewFood(
+    String foodName, double calories,double fats,double proteins,double carbs, String amount) async {
+  const endpoint = "createNewFood";
   final data = {
-    "UserName": userName,
-    "Password": password,
-    "UserEmail": userEmail
+   "FoodName": foodName,
+    "Calories": calories,
+    "Fats": fats,
+    "Proteins": proteins,
+    "Carbs": carbs,
+    "Amount": amount
   };
   try {
     final response = await ApiService().postReq(data, endpoint);
@@ -15,7 +18,7 @@ Future<int?> createAccount(
       final responseData = jsonDecode(response.body);
       if (responseData is List && responseData.isNotEmpty) {
         final user = responseData[0];
-        print("Successfully Signup in with data: $responseData");
+        print("Successfully create new food  with data: $responseData");
       }
     } else {
       print('Failed with status code ${response.statusCode}: ${response.body}');

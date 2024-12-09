@@ -13,14 +13,12 @@ Future<int?> loginUser(String userName, String password) async {
 
     if (response.statusCode == 200) {
       final responseData = jsonDecode(response.body);
-
       if (responseData is List && responseData.isNotEmpty) {
         final user = responseData[0];
         SharedPreferences prefs = await SharedPreferences.getInstance();
-
         final userAccountId = user["IdUser"];
         await prefs.setInt('userAccountId', userAccountId);
-        await prefs.setString('UserEmail', user["UserEmail"]);
+        await prefs.setString('UserEmail', user["UserName"]);
         print("Successfully logged in with data: $responseData");
       }
     } else {

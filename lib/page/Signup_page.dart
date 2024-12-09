@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/domain/usecases/create_account.dart';
 import 'package:calories_remake/page/Login_page.dart';
 import 'package:flutter/material.dart';
@@ -83,6 +83,10 @@ class _SignupPageState extends State<SignupPage>
     String password = _password.text.trim();
     String username = _userName.text.trim();
     String checkPassword = _password2.text.trim();
+    bool isValidEmail(String email) {
+      final RegExp emailRegex = RegExp(r"^[a-zA-Z0-9._%+-]+@gmail\.com$");
+      return emailRegex.hasMatch(email);
+    }
 
     // Kiểm tra input có bị rỗng
     if (email.isEmpty ||
@@ -97,10 +101,19 @@ class _SignupPageState extends State<SignupPage>
           color: Colors.red,
         ),
       );
-      return; // Dừng hàm
+      return;
     }
-
-    // Kiểm tra mật khẩu có giống nhau hay không
+    if (!isValidEmail(email)) {
+      _showDialogCheckInput(
+        'Đăng Ký thất bại',
+        'Email phải có đuôi @gmail.com.',
+        const Icon(
+          Icons.error,
+          color: Colors.red,
+        ),
+      );
+      return;
+    }
     if (password != checkPassword) {
       _showDialogCheckInput(
         'Đăng Ký thất bại',
@@ -110,7 +123,7 @@ class _SignupPageState extends State<SignupPage>
           color: Colors.red,
         ),
       );
-      return; // Dừng hàm
+      return;
     }
 
     // Kiểm tra độ dài mật khẩu
@@ -126,7 +139,6 @@ class _SignupPageState extends State<SignupPage>
       return; // Dừng hàm
     }
 
-    // Nếu mọi điều kiện hợp lệ, tiến hành tạo tài khoản
     try {
       int? isSignup = await createAccount(username, password, email);
       if (isSignup == 200) {
@@ -373,7 +385,7 @@ class _SignupPageState extends State<SignupPage>
                     height: 15,
                   ),
                   Container(
-                    color: Theme.of(context).scaffoldBackgroundColor,
+                    color: Theme.of(context).colorScheme.background,
                     child: Text(
                       lang('backSignIn', '    or Sign in with    '),
                       style: GoogleFonts.poppins(

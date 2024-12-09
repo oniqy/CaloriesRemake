@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:calories_remake/data/api_service.dart';
 import 'package:calories_remake/domain/entities/calories_in.dart';
-import 'package:calories_remake/models/calories_in.dart'; 
-
 Future<List<CaloriesIn>?> getAllCaloInByDay(String timeOfDay, int idUserInfo) async {
   const endpoint = "getAllCaloInByDay";
 

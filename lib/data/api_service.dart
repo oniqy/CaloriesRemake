@@ -4,7 +4,7 @@ import 'package:http/http.dart';
 
 class ApiService {
   static String createApiUrl(String endpoint) {
-    String baseUrl = 'http://192.168.1.5/dbCaloriesTracker/';
+    String baseUrl = 'http://192.168.1.8/dbCaloriesTracker/';
     print('URL:$baseUrl$endpoint');
     return '$baseUrl$endpoint';
   }

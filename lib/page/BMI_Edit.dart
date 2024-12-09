@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Language/lang.dart';
+import '../language/lang.dart';
 
 class BMI_Edit extends StatefulWidget {
   BMI_Edit({super.key});

@@ -1,4 +1,4 @@
-import 'package:calories_remake/Language/lang.dart';
+import 'package:calories_remake/language/lang.dart';
 import 'package:calories_remake/domain/entities/user_info.dart';
 import 'package:calories_remake/domain/usecases/get_userInfo_byId.dart';
 import 'package:calories_remake/page/Edit_Index_Infomation.dart';
@@ -44,11 +44,12 @@ class _BMR_EditState extends State<BMR_Edit> {
       }
       //
       if (widget.userInfoEntity.target == 'GiamCan') {
-        targetWeight =double.parse((TDEE! - (TDEE! * 0.10)).toStringAsFixed(1)) ;
+        targetWeight =
+            double.parse((TDEE! - (TDEE! * 0.10)).toStringAsFixed(1));
       } else if (widget.userInfoEntity.exerciseIntensity == 'DuyTri') {
         targetWeight = TDEE;
       } else if (widget.userInfoEntity.exerciseIntensity == 'TangCan') {
-        targetWeight =double.parse((TDEE! + 450).toStringAsFixed(1)) ;
+        targetWeight = double.parse((TDEE! + 450).toStringAsFixed(1));
       } else {
         targetWeight = TDEE;
       }
@@ -166,8 +167,7 @@ class _BMR_EditState extends State<BMR_Edit> {
                           width: 1,
                           color: Colors.grey.shade700,
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 20, left: 20),
+                        Expanded(
                           child: Column(
                             children: [
                               Text(
@@ -241,8 +241,7 @@ class _BMR_EditState extends State<BMR_Edit> {
                           width: 1,
                           color: Colors.grey.shade700,
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 20, left: 20),
+                        Expanded(
                           child: Column(
                             children: [
                               Text(
@@ -316,8 +315,7 @@ class _BMR_EditState extends State<BMR_Edit> {
                           width: 1,
                           color: Colors.grey.shade700,
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 15, left: 20),
+                        Expanded(
                           child: Column(
                             children: [
                               Text(
